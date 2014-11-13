@@ -10,15 +10,22 @@ import java.sql.Statement;
 public class DBConnection {
 
 	public static Connection getConnection() {
-		// Ê¹ÓÃµÄÇı¶¯³ÌĞòÀà£¬ÓÃÓÚ²éÕÒÇı¶¯³ÌĞò
-		String driver = "oracle.jdbc.driver.OracleDriver"; // Çı¶¯³ÌĞòÀà£¬ÓÉ³§ÉÌÌá¹©
-		String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl"; // Êı¾İ¿âURL£¬¸ñÊ½ÓÉ³§ÉÌ¹æ¶¨
+		// ä½¿ç”¨çš„é©±åŠ¨ç¨‹åºç±»ï¼Œç”¨äºæŸ¥æ‰¾é©±åŠ¨ç¨‹åº
+		//oracleæ•°æ®åº“
+		String driver = "oracle.jdbc.driver.OracleDriver"; // é©±åŠ¨ç¨‹åºç±»ï¼Œç”±å‚å•†æä¾›
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl"; // æ•°æ®åº“URLï¼Œæ ¼å¼ç”±å‚å•†è§„å®š
 		String username = "ycc";
 		String password = "123456";
+		//mysqlæ•°æ®åº“
+	   //String driver = "com.mysql.jdbc.Driver";// é©±åŠ¨ç¨‹åºç±»ï¼Œç”±å‚å•†æä¾›
+		//String url = "jdbc:mysql://localhost:3306/italksever";// æ•°æ®åº“URLï¼Œæ ¼å¼ç”±å‚å•†è§„å®š
+		//String username = "root";
+		//String password = "root";
+
 
 		Connection con = null;
 		try {
-			Class.forName(driver); // ¼ÓÔØÊı¾İ¿âÇı¶¯Àà£¬µ«ÊÇ²¢²»´´½¨¶ÔÏóÊµÀı
+			Class.forName(driver); // åŠ è½½æ•°æ®åº“é©±åŠ¨ç±»ï¼Œä½†æ˜¯å¹¶ä¸åˆ›å»ºå¯¹è±¡å®ä¾‹
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.toString());
 		}
